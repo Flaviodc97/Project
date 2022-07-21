@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+       <article class="media content-section">
+           <img class="rounded-circle article-img" src="{{ url_for('static', filename='img/logo_uniba.png') }}">
+
+           <div class="media-body">
+
+            <div class="article-metadata">
+
+                Finanziamento dell'<a class="mr-2" href="#">{{finanziamentoesterno.author.nome_ente}}</a>
+                <div>
+
+                </div>
+
+                <h2 class="article-title">{{ finanziamentoesterno.ente_cotroparte }}, {{ finanziamentoesterno.nazione_ente_controparte }}</a></h2>
+
+
+                <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('finanziamentiesterni.update_finanziamentoesterno',finanziamentoesterno_id=finanziamentoesterno.id) }}">Modifica</a>
+
+                <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Rimuovi</button>
+
+
+
+            </div>
+               <p class="article-content">Responsabile: {{finanziamentoesterno.resp.nome}}, {{finanziamentoesterno.resp.cognome}}</p>
+               <p class="article-content">Tipologia: {{ finanziamentoesterno.tipologia }}</p>
+               <p class="article-content">Eventuali entrate correlate: {{finanziamentoesterno.eventuali_entrate_correlate}}</p>
+               <p class="article-content">Documentazione: </p> <a class="btn btn-secondary btn-sm m-1" href="{{ url_for('finanziamentiesterni.download_file', finanziamentoesterno_id = finanziamentoesterno.id) }}"><img src="{{url_for('static', filename='img/pngfind.com-pdf-icon-png-200182.png')}}" width="20" /> Scarica la documentazione </a>
+               <p class="article-content">Descrizione Documentazione: {{ finanziamentoesterno.descrizione_documentazione}}</p>
+           </div>
+       </article>
+        <!-- Modal -->
+          <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="deleteModalLabel">Rimuovere?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla</button>
+                  <form action="{{ url_for('finanziamentiesterni.delete_finanziamentoesterno', finanziamentoesterno_id=finanziamentoesterno.id) }}" method="POST">
+                    <input class="btn btn-danger" type="submit" value="Rimuovi">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% endblock content%}
+

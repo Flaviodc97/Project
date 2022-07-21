@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+
+            <form method='POST' enctype='multipart/form-data'>
+
+                {{ form.hidden_tag() }}
+
+                <fieldset class="form-group">
+
+                    <legend class="border-bottom mb-4">{{ legend }} </legend>
+
+                    <div class="form-group">
+                        {{ form.oggetto_licensing.label() }}
+
+                        {% if form.oggetto_licensing.errors %}
+                            {{ form.oggetto_licensing(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.oggetto_licensing.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.oggetto_licensing(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.responsabile.label() }}
+                            {{ form.responsabile }}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.ente_controparte.label() }}
+
+                        {% if form.ente_controparte.errors %}
+                            {{ form.ente_controparte(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.ente_controparte.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.ente_controparte(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.nazione_controparte.label() }}
+
+                        {% if form.nazione_controparte.errors %}
+                            {{ form.nazione_controparte(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.nazione_controparte.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.nazione_controparte(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.descrizione_controparte.label() }}
+
+                        {% if form.descrizione_controparte.errors %}
+                            {{ form.descrizione_controparte(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.descrizione_controparte.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.descrizione_controparte(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.eventuali_entrate_correlate.label() }}
+
+                        {% if form.eventuali_entrate_correlate.errors %}
+                            {{ form.eventuali_entrate_correlate(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.eventuali_entrate_correlate.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.eventuali_entrate_correlate(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.documentazione.label() }}
+                        {{ form.documentazione(class="form-control-file") }}
+                        {% if form.documentazione.errors %}
+                            {% for error in form.documentazione.errors %}
+                                     <span class="text-danger"> {{ error }}</span></br>
+                            {% endfor %}
+                         {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.descrizione_documentazione.label() }}
+
+                        {% if form.descrizione_documentazione.errors %}
+                            {{ form.descrizione_documentazione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.descrizione_documentazione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.descrizione_documentazione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                </fieldset>
+                <div class="form-group">
+                        {{ form.submit_button(class = "btn btn-outline-info") }}
+                </div>
+            </form>
+    </div>
+
+
+{% endblock content%}

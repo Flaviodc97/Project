@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+
+            <form method='POST' enctype='multipart/form-data'>
+
+                {{ form.hidden_tag() }}
+
+                <fieldset class="form-group">
+
+                    <legend class="border-bottom mb-4">{{ legend }} </legend>
+
+                    <div class="form-group">
+                        {{ form.denominazione_industria.label() }}
+
+                        {% if form.denominazione_industria.errors %}
+                            {{ form.denominazione_industria(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.denominazione_industria.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.denominazione_industria(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+
+                    <div class="form-group">
+                        {{ form.anno_sottoscrizione_collaborazione.label() }}
+
+                        {% if form.anno_sottoscrizione_collaborazione.errors %}
+                            {{ form.anno_sottoscrizione_collaborazione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.anno_sottoscrizione_collaborazione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.anno_sottoscrizione_collaborazione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.durata_collaborazione.label() }}
+
+                        {% if form.durata_collaborazione.errors %}
+                            {{ form.durata_collaborazione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.durata_collaborazione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.durata_collaborazione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.oggetto_collaborazione.label() }}
+
+                        {% if form.oggetto_collaborazione.errors %}
+                            {{ form.oggetto_collaborazione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.oggetto_collaborazione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.oggetto_collaborazione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.valore_economico_contratto.label() }}
+
+                        {% if form.valore_economico_contratto.errors %}
+                            {{ form.valore_economico_contratto(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.valore_economico_contratto.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.valore_economico_contratto(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.responsabile.label() }}
+                            {{ form.responsabile }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.contratto.label() }}
+                        {{ form.contratto(class="form-control-file") }}
+                        {% if form.contratto.errors %}
+                            {% for error in form.contratto.errors %}
+                                     <span class="text-danger"> {{ error }}</span></br>
+                            {% endfor %}
+                         {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.descrizione_contratto.label() }}
+
+                        {% if form.descrizione_contratto.errors %}
+                            {{ form.descrizione_contratto(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.descrizione_contratto.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.descrizione_contratto(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                </fieldset>
+                <div class="form-group">
+                        {{ form.submit_button(class = "btn btn-outline-info") }}
+                </div>
+            </form>
+    </div>
+
+
+{% endblock content%}

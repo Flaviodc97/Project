@@ -1,0 +1,138 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+
+            <form method='POST' enctype='multipart/form-data'>
+
+                {{ form.hidden_tag() }}
+
+
+                <fieldset class="form-group">
+
+                    <legend class="border-bottom mb-4">{{ legend }} </legend>
+
+                    <div class="form-group">
+                        {{ form.nome.label() }}
+
+                        {% if form.nome.errors %}
+                            {{ form.nome(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.nome.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.nome(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.codice.label() }}
+
+                        {% if form.codice.errors %}
+                            {{ form.codice(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.codice.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.codice(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.nazione_validita.label() }}
+
+                        {% if form.nazione_validita.errors %}
+                            {{ form.nazione_validita(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.nazione_validita.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.nazione_validita(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.descrizione.label() }}
+
+                        {% if form.descrizione.errors %}
+                            {{ form.descrizione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.descrizione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.descrizione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.anno_presentazione.label() }}
+
+                        {% if form.anno_presentazione.errors %}
+                            {{ form.anno_presentazione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.anno_presentazione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.anno_presentazione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.anno_assegnazione.label() }}
+
+                        {% if form.anno_assegnazione.errors %}
+                            {{ form.anno_assegnazione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.anno_assegnazione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.anno_assegnazione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.responsabile.label() }}
+                            {{ form.responsabile }}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.certificato.label() }}
+                        {{ form.certificato(class="form-control-file") }}
+                        {% if form.certificato.errors %}
+                            {% for error in form.certificato.errors %}
+                                     <span class="text-danger"> {{ error }}</span></br>
+                            {% endfor %}
+                         {% endif %}
+                    </div>
+
+                </fieldset>
+                <div class="form-group">
+                        {{ form.submit_button(class = "btn btn-outline-info") }}
+                </div>
+            </form>
+    </div>
+
+{%endblock content%}

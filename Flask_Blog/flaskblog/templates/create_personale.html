@@ -1,0 +1,250 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+
+            <form method='POST' enctype='multipart/form-data'>
+
+                {{ form.hidden_tag() }}
+
+                <fieldset class="form-group">
+
+                    <legend class="border-bottom mb-4">{{ legend }} </legend>
+
+                    <div class="form-group">
+                        {{ form.nome.label() }}
+
+                        {% if form.nome.errors %}
+                            {{ form.nome(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.nome.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.nome(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.cognome.label() }}
+
+                        {% if form.cognome.errors %}
+                            {{ form.cognome(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.cognome.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.cognome(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.cf.label() }}
+
+                        {% if form.cf.errors %}
+                            {{ form.cf(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.cf.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.cf(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.data_di_nascita.label() }}
+
+                        {% if form.data_di_nascita.errors %}
+                            {{ form.data_di_nascita(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.data_di_nascita.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.data_di_nascita(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.qualifica.label() }}
+
+                        {% if form.qualifica.errors %}
+                            {{ form.qualifica(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.qualifica.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.qualifica(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.struttura.label() }}
+
+                        {% if form.struttura.errors %}
+                            {{ form.struttura(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.struttura.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.struttura(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.competenza_specifica.label() }}
+
+                        {% if form.competenza_specifica.errors %}
+                            {{ form.competenza_specifica(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.competenza_specifica.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.competenza_specifica(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.tipologia_contratto.label() }}
+
+                        {% if form.tipologia_contratto.errors %}
+                            {{ form.tipologia_contratto(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.tipologia_contratto.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.tipologia_contratto(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.altro.label() }}
+
+                        {% if form.altro.errors %}
+                            {{ form.altro(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.altro.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.altro(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.data_inizio_rapporto.label() }}
+
+                        {% if form.data_inizio_rapporto.errors %}
+                            {{ form.data_inizio_rapporto(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.data_inizio_rapporto.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.data_inizio_rapporto(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.documento }}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.descrizione_documento.label() }}
+
+                        {% if form.descrizione_documento.errors %}
+                            {{ form.descrizione_documento(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.descrizione_documento.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.descrizione_documento(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form.descrizione.label() }}
+
+                        {% if form.descrizione.errors %}
+                            {{ form.descrizione(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.descrizione.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.descrizione(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                    <div class="form-group">
+                        {{ form.tipo.label() }}
+
+                        {% if form.tipo.errors %}
+                            {{ form.tipo(class="form-control form-control-lg is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form.tipo.errors %}
+                                     <span> {{ error }}</span>
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+                            {{ form.tipo(class= "form-control form-control-lg") }}
+                        {% endif %}
+
+                    </div>
+
+                </fieldset>
+                <div class="form-group">
+                        {{ form.submit_button(class = "btn btn-outline-info") }}
+                </div>
+            </form>
+    </div>
+
+
+{% endblock content%}
